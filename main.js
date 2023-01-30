@@ -36,13 +36,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
 
     document.getElementById("mostBurnedBtn").addEventListener("click", function () {
-
-        document.getElementById("mostBurnedInput").value = "clicked";
+        // https://stackoverflow.com/questions/4020796/finding-the-max-value-of-an-attribute-in-an-array-of-objects
+        const maxCaloriesExercise = exercises.reduce(function (prev, current) {
+            return (prev.calories > current.calories) ? prev : current;
+        });
+        document.getElementById("mostBurnedInput").value = maxCaloriesExercise.type + " " + maxCaloriesExercise.calories;
     });
 
     document.getElementById("showAllBtn").addEventListener("click", function () {
 
-        document.getElementById("exerciseList").innerHTML = "<li>Show all clicked</li>";
+        let ulContent = "";
+        exercises.forEach(function (exercise) {
+            ulContent += "<li>";
+            ulContent += exercise.type + " ";
+            ulContent += exercise.minutes + " minutes ";
+            ulContent += exercise.calories + " calories</li>";
+        });
+        document.getElementById("exerciseList").innerHTML = ulContent;
     });
 });
-
