@@ -3,21 +3,48 @@
 
 <head>
     <meta charset="utf-8">
-    <title>starter code</title>
-<link rel="stylesheet" type="text/css" href="site.css">
+    <title>Calorie Burner</title>
 </head>
 
 <body>
-<h2>starter project</h2>
+    <h1>Calorie Burner</h1>
 
-<button type="button" id="button1">Button</button>
-<div>
-    <br />
-    <input type="text" val="starting value" text="hello" id="textbox1" />
-    <br />
-</div>
+    <div id="exerciseRadio">
+        <h2>What type of exercise did you do?</h2>
+        <div>
+            <input type="radio" id="sitUps" name="exercise" value="Sit Ups">
+            <label for="sitUps">Sit Ups</label><br>
 
-<script src="main.js"></script>
+            <input type="radio" id="pushUps" name="exercise" value="Push Ups">
+            <label for="pushUps">Push Ups</label><br>
+
+            <input type="radio" id="jumpRope" name="exercise" value="Jump Rope">
+            <label for="jumpRope">Jump Rope</label><br>
+        </div>
+    </div>
+
+    <div>
+        <h2>How many minutes did you exercise?</h2>
+        <input type="number" id="minutesInput">
+        <button type="button" id="addBtn">Add</button>
+    </div>
+
+    <div>
+        <h2>Calculate how many calories you burned</h2>
+        <button type="button" id="mostBurnedBtn">Most burned</button>
+        <input type="text" id="mostBurnedInput">
+    </div>
+
+    <div>
+        <h2>See all the calories you burned</h2>
+        <button type="button" id="showAllBtn">Show all</button>
+    </div>
+
+    <ul id="exerciseList">
+        <li>Example</li>
+    </ul>
+
+    <script src="main.js"></script>
 </body>
 
 </html>
